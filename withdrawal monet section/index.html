@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Withdrawal Money</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <span class="back-button" id="back-button" style="display: none;">🡸</span> <!-- Başlangıçta gizli -->
+        <h2>Withdrawal Money</h2>
+        <div class="money-options" id="money-options">
+            <div class="option">
+                <img src="papara.png" alt="Papara" class="money-image" id="papara">
+            </div>
+            <div class="option">
+                <img src="paypal.png" alt="PayPal" class="money-image" id="paypal">
+            </div>
+            <div class="option">
+                <img src="trx.png" alt="TRX" class="money-image" id="trx">
+            </div>
+            <div class="option">
+                <img src="usdt.png" alt="USDT" class="money-image" id="usdt">
+            </div>
+            <div class="option full-width">
+                <img src="ltc.png" alt="LTC" class="money-image center-image" id="ltc">
+            </div>
+            <div class="option full-width support-container">
+                <img src="support.png" alt="Support" class="support-image" id="support">
+            </div>
+        </div>
+
+        <div class="form-container" id="form-container">
+            <div class="form-group">
+                <label for="amount">Amount</label>
+                <input type="number" id="amount" placeholder="Enter amount">
+            </div>
+            <div class="form-group" id="dynamic-input">
+                <label for="wallet">Wallet</label>
+                <input type="text" id="account" placeholder="Enter account details">
+            </div>
+            <button type="submit" class="confirm-button">Confirm</button>
+        </div>
+    </div>
+
+    <script>
+        const formContainer = document.getElementById('form-container');
+        const dynamicInput = document.getElementById('dynamic-input');
+        const backButton = document.getElementById('back-button');
+        const moneyOptions = document.getElementById('money-options');
+
+        // Geri butonunu işleyin
+        backButton.addEventListener('click', function () {
+            moneyOptions.style.display = 'flex';  // Para opsiyonlarını göster
+            formContainer.style.display = 'none';  // Formu gizle
+            backButton.style.display = 'none'; // Geri butonunu gizle
+        });
+
+        // Tıklama olayları
+        const moneyImages = document.querySelectorAll('.money-image');
+        moneyImages.forEach((img) => {
+            img.addEventListener('click', function () {
+                let placeholderText = "";
+                let labelText = "Account"; // Varsayılan etiket
+
+                switch (img.id) {
+                    case "papara":
+                        placeholderText = "Enter Papara No";
+                        break;
+                    case "paypal":
+                        placeholderText = "Enter Paypal E-mail";
+                        break;
+                    case "trx":
+                        placeholderText = "Enter Tron Trx Wallet";
+                        labelText = "Wallet"; // TRX için
+                        break;
+                    case "usdt":
+                        placeholderText = "Enter Usdt Erc20 Wallet";
+                        labelText = "Wallet"; // USDT için
+                        break;
+                    case "ltc":
+                        placeholderText = "Enter LiteCoin Wallet";
+                        labelText = "Wallet"; // LTC için
+                        break;
+                }
+                showForm(placeholderText, labelText);
+                backButton.style.display = 'block'; // Geri butonunu göster
+            });
+        });
+
+        document.getElementById('support').addEventListener('click', function () {
+            window.open("https://t.me/@happymoji", "_blank");
+        });
+
+        function showForm(placeholder, label) {
+            moneyOptions.style.display = 'none';
+            formContainer.style.display = 'block';
+            dynamicInput.querySelector('label').innerText = label; // Dinamik etiket
+            dynamicInput.querySelector('input').placeholder = placeholder; // Dinamik placeholder
+            formContainer.style.margin = '0 auto'; // Formu ortala
+        }
+    </script>
+</body>
+
+</html>

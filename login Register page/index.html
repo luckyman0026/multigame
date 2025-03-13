@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andev Web</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- Logo (Only visible in Login Form) -->
+    <div id="logoContainer" class="logo-container">
+      <img src="logo.png" alt="Logo" class="logo">
+    </div>
+
+    <!-- Login Form -->
+    <form id="loginForm" action="#">
+      <h2>Login Form</h2>
+      <div class="input-field">
+        <input type="text" required>
+        <label>Enter your email</label>
+      </div>
+      <div class="input-field">
+        <input type="password" required>
+        <label>Enter your password</label>
+      </div>
+      <div class="forget">
+        <label for="remember">
+          <input type="checkbox" id="remember">
+          <p>Remember me</p>
+        </label>
+        <a href="#" id="forgotPasswordLink">Forgot password?</a>
+      </div>
+      <button type="submit">Log In</button>
+      <div class="register">
+        <p>Don't have an account? <a href="#" id="registerLink">Register</a></p>
+      </div>
+    </form>
+
+    <!-- Register Form -->
+    <form id="registerForm" action="#" style="display: none;">
+      <h2>Register Form</h2>
+      <div class="input-field">
+        <input type="text" required>
+        <label>Enter your email</label>
+      </div>
+      <div class="input-field">
+        <input type="password" required>
+        <label>Enter your password</label>
+      </div>
+      <button type="submit">Sign Up</button>
+      <div class="register">
+        <p>Already have an account? <a href="#" id="loginLink">Log In</a></p>
+      </div>
+    </form>
+
+    <!-- Forgot Password Form -->
+    <form id="forgotPasswordForm" action="#" style="display: none;">
+      <h2>Forgot Password</h2>
+      <div class="input-field">
+        <input type="text" required>
+        <label>Enter your email</label>
+      </div>
+      <button type="submit">Reset Password</button>
+      <div class="register">
+        <p>Remember your password? <a href="#" id="backToLoginLink">Log In</a></p>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // JavaScript to toggle between forms and hide/show logo
+    document.getElementById('registerLink').addEventListener('click', function (e) {
+      e.preventDefault();
+      document.getElementById('loginForm').style.display = 'none';
+      document.getElementById('forgotPasswordForm').style.display = 'none';
+      document.getElementById('registerForm').style.display = 'block';
+      document.getElementById('logoContainer').style.display = 'none'; // Hide logo
+    });
+
+    document.getElementById('loginLink').addEventListener('click', function (e) {
+      e.preventDefault();
+      document.getElementById('registerForm').style.display = 'none';
+      document.getElementById('forgotPasswordForm').style.display = 'none';
+      document.getElementById('loginForm').style.display = 'block';
+      document.getElementById('logoContainer').style.display = 'block'; // Show logo
+    });
+
+    document.getElementById('forgotPasswordLink').addEventListener('click', function (e) {
+      e.preventDefault();
+      document.getElementById('loginForm').style.display = 'none';
+      document.getElementById('registerForm').style.display = 'none';
+      document.getElementById('forgotPasswordForm').style.display = 'block';
+      document.getElementById('logoContainer').style.display = 'none'; // Hide logo
+    });
+
+    document.getElementById('backToLoginLink').addEventListener('click', function (e) {
+      e.preventDefault();
+      document.getElementById('forgotPasswordForm').style.display = 'none';
+      document.getElementById('registerForm').style.display = 'none';
+      document.getElementById('loginForm').style.display = 'block';
+      document.getElementById('logoContainer').style.display = 'block'; // Show logo
+    });
+  </script>
+</body>
+
+</html>

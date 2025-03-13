@@ -1,0 +1,51 @@
+Value: $0.50
+4-match Prize: $2
+
+lucky_seven
+orange
+pear
+strawberry
+watermelon
+
+
+
+Value: $1
+4-match Prize: $4
+
+apricot
+
+
+
+
+Value: $1.50
+4-match Prize: $6
+
+grapes
+
+
+
+Value: $2
+4-match Prize: $8
+
+cherry
+
+
+
+Value: $2.50
+4-match Prize: $10
+
+apple
+
+
+
+Value: $4
+4-match Prize: $16
+
+banana
+
+
+
+Value: $5
+4-match Prize: $20
+
+lemon

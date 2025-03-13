@@ -1,0 +1,58 @@
+Değer: 0.50$
+4'lü Eşleşme Ödülü: 2$
+
+lucky_seven
+orange
+pear
+strawberry
+watermelon
+
+-
+
+Değer: 1$
+4'lü Eşleşme Ödülü: 4$
+
+apricot
+
+-
+
+Değer: 1.50$
+4'lü Eşleşme Ödülü: 6$
+
+grapes
+
+- 
+
+Değer: 2$
+4'lü Eşleşme Ödülü: 8$
+
+cherry
+
+-
+
+
+Değer: 2,5$
+4'lü Eşleşme Ödülü: 10$
+
+apple
+
+
+-
+
+
+Değer: 4$
+4'lü Eşleşme Ödülü: 16$
+
+
+banana
+
+
+-
+
+Değer: 5$
+4'lü Eşleşme Ödülü: 20$
+
+
+lemon
+
+
